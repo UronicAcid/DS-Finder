@@ -50,12 +50,12 @@ def main(model_path, dataset_path, output_path):
 
     # Preprocess the data
     X = preprocess_data(df, required_columns)
-    X.columns = ['expression', 'gene effect', 'original codon frequency', 'mutated codon frequency',
-                 'mutated codon normalized frequency', 'delta codon normalized frequency', 'SpliceAI score',
+    X.columns = ['expression', 'gene effect', 'old codon frequency', 'new codon frequency',
+                 'new codon normalized frequency', 'delta codon normalized frequency', 'SpliceAI score',
                  'conservation score', 'dRSCU', 'AbSplice score', 'CADD score',
-                 'position', 'gene length', 'WT RNA foriginaling energy', 'RNA foriginaling energy change',
+                 'position', 'gene length', 'WT RNA folding energy', 'RNA folding energy change',
                  '|energy change ratio|', 'exon CpG', 'nucleitide CpG', 'SpliceAI DS DL',
-                 'SpliceAI DS DG', 'mutated codon position3', 'original codon position3']
+                 'SpliceAI DS DG', 'new codon position3', 'old codon position3']
 
     # Make predictions with the model
     y_pred = model.predict(X)
