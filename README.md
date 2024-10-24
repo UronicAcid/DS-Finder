@@ -49,6 +49,6 @@ required_columns = ['expression_log', 'gene_effect', 'original_codon_freq', 'mut
 **Running the Script**
 Run the following command in your terminal:
 ```shell
-python predict_script.py --model_path path/to/model.sav --dataset_path path/to/dataset.csv --output_path path/to/output.csv
+python prediction.py --model_path model/240304_catboost_model_trained_on_HCT116_D35.sav --dataset_path test_dataset.csv --output_path output.csv
 ```
 
