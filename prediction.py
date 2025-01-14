@@ -1,10 +1,13 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+import pandas as pd
+import numpy as np
+import base64
+import subprocess
+import os
 import argparse
 import pickle
-import pandas as pd
-from sklearn.preprocessing import StandardScaler
 
 def load_model(model_path):
     """Load the model from the specified file"""
@@ -24,12 +27,9 @@ def check_column_names(df, required_columns):
     return True
 
 def preprocess_data(df, columns_to_scale):
-    """Preprocess the data by filling NaN values and scaling numerical columns"""
+    """Preprocess the data by filling NaN values"""
     df[columns_to_scale] = df[columns_to_scale].fillna(0)
-    std_scaler = StandardScaler()
     X = df[columns_to_scale]
-    numeric_columns = X.select_dtypes(include=['float64', 'int64']).columns
-    X[numeric_columns] = std_scaler.fit_transform(X[numeric_columns])
     return X
 
 def main(model_path, dataset_path, output_path):
