@@ -2,6 +2,7 @@
 
 This project includes a script for loading a pre-trained model and making predictions on a dataset. The script can read model file paths and dataset file paths from the command line, preprocess the data, and output the prediction results.
 
+version: 0.1.0
 
 
 ## Dependencies
